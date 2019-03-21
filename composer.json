@@ -1,0 +1,20 @@
+{
+    "name": "wujie/es-study",
+    "description": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=7.1",
+        "elasticsearch/elasticsearch": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Study\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "武杰",
+            "email": "1224805548@qq.com"
+        }
+    ]
+}
