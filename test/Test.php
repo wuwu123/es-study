@@ -78,7 +78,23 @@ class AddTest
     }
 }
 
-$assModel = new AddTest();
+// $assModel = new AddTest();
 // $assModel->update();
 // $assModel->del();
-$assModel->get();
+// $assModel->get();
+
+
+class Select
+{
+    public function __construct()
+    {
+        require_once __DIR__ . '/../vendor/autoload.php';
+    }
+
+    public function do(){
+        \Study\Select::make()->filter();
+    }
+}
+
+$selectModel = new Select();
+$selectModel->do();
