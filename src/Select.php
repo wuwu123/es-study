@@ -183,4 +183,36 @@ class Select extends BaseClass
         print_r($return);
     }
 
+    /**
+     * 每个查询结果分值一样 , 字段匹配的结果都为1
+     */
+    public function scoreLine()
+    {
+        $params = array_merge($this->defaultParams(), [
+            'body' => [
+                'query' => [
+                    'bool' => [
+                        "should" => [ // 等同于or
+                            [
+                                'constant_score' => [
+                                    'query' => ['match' => ['title' => "44444"]]
+                                ]
+                            ],
+                            [
+                                'constant_score' => [
+                                    'query' => ['other' => ['title' => "44444"]]
+                                ]
+                            ]
+                        ],
+                        "filter" => [
+                            "range" => ["id" => ["gte" => 0]]// gte 大于等于查询  lte 小于等于
+                        ]
+                    ]
+                ]
+            ]
+        ]);
+        $return = Client::make()->search($params);
+        print_r($return);
+    }
+
 }
