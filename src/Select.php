@@ -56,11 +56,30 @@ class Select extends BaseClass
             'size' => 1,
             'body' => [
                 'query' => [
-                    'match' => ["title" => "武杰"],
-                    'multi_match' => [//同事匹配多个字段
-                        "query" => "guide",
-                        "fields" => ["tip", "other", "_all"]
-                    ]
+                    'match' => ["title" => "1"],
+                    // 'multi_match' => [//同事匹配多个字段
+                    //     "query" => "guide",
+                    //     "fields" => ["tip", "other", "_all"]
+                    // ]
+                ]
+            ]
+        ];
+        $return = Client::make()->search($params);
+        print_r($return);
+    }
+
+    public function prefix()
+    {
+        $params = [
+            'index' => $this->index,
+            "type" => $this->type,
+            'from' => 1,
+            'size' => 100,
+            'body' => [
+                'query' => [
+                    'wildcard' => [
+                        'title' => "我是武杰1*"
+                    ],
                 ]
             ]
         ];
@@ -212,6 +231,21 @@ class Select extends BaseClass
             ]
         ]);
         $return = Client::make()->search($params);
+        print_r($return);
+    }
+
+    /**
+     * 主键查询
+     * @param $id
+     */
+    public function getById($id)
+    {
+        $params = [
+            'type' => $this->type,
+            'index' => $this->index,
+            'id' => $id
+        ];
+        $return = Client::make()->get($params);
         print_r($return);
     }
 

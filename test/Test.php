@@ -92,7 +92,9 @@ class Select
     }
 
     public function do(){
-        \Study\Select::make()->filter();
+        \Study\Select::make()->getById(3);
+        // \Study\Add::make()->update();
+        \Study\Select::make()->prefix();
     }
 }
 
