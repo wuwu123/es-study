@@ -8,7 +8,6 @@
 
 namespace Study\connect;
 
-
 use Elasticsearch\ClientBuilder;
 
 class Client
@@ -26,5 +25,4 @@ class Client
         }
         return self::$client;
     }
-
 }

@@ -8,7 +8,6 @@
 
 namespace Study;
 
-
 use Study\connect\Client;
 
 class Select extends BaseClass
@@ -248,5 +247,4 @@ class Select extends BaseClass
         $return = Client::make()->get($params);
         print_r($return);
     }
-
 }

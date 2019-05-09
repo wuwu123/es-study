@@ -8,7 +8,6 @@
 
 namespace Study;
 
-
 class BaseClass
 {
     protected $index = "wujie";
@@ -21,5 +20,4 @@ class BaseClass
     {
         return new static();
     }
-
 }

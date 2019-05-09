@@ -8,12 +8,10 @@
 
 namespace Study;
 
-
 use Study\connect\Client;
 
 class Add extends BaseClass
 {
-
     public function addContent()
     {
         $id = 2;
@@ -77,5 +75,4 @@ class Add extends BaseClass
         $return = Client::make()->update($params);
         print_r($return);
     }
-
 }

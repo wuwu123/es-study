@@ -16,5 +16,8 @@
             "name": "武杰",
             "email": "1224805548@qq.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.15"
+    }
 }

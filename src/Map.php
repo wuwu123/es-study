@@ -12,7 +12,6 @@ use Study\connect\Client;
 
 class Map extends BaseClass
 {
-
     public function createIndex()
     {
         $params = [
@@ -116,6 +115,4 @@ class Map extends BaseClass
         $return = Client::make()->indices()->putMapping($params);
         var_dump($return);
     }
-
-
 }
